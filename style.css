@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio {
+    padding: 60px 10%;
+}
+
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Memperbesar ukuran minimum box */
+    grid-gap: 40px;
+}
+
+.portfolio-content .row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px lightblue, 1px 1px 40px lightblue;
+    height: 400px; /* Tinggi tetap yang lebih besar */
+    background: #eee; /* Background yang jelas jika gambar tidak ada */
+}
+
+.portfolio-content .row img {
+    width: 100%;
+    height: auto; /* Memastikan gambar proporsional */
+    object-fit: cover;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.portfolio-content .layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6); /* Background semi-transparan agar teks lebih mudah dibaca */
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-content .row:hover .layer {
+    opacity: 1;
+}
+
+/* CSS untuk gambar diperbesar */
+.expandable {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.expandable.expanded {
+    transform: scale(1.5); /* Memperbesar gambar 1.5 kali dari ukuran semula */
+    z-index: 10;
+    position: relative;
+    max-width: none;
+    max-height: none;
+}
+
+
+/* Tambahan efek overlay */
+.portfolio-content {
+    position: relative;
+}
+
+.portfolio-content .row {
+    overflow: hidden;
+}
+
+.portfolio-content .layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-content .row:hover .layer {
+    opacity: 1;
+}
+
+.logo {
+    font-size: 24px;
+    color: #333;
+}
+
+.navbar a {
+    margin-left: 20px;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+.home {
+    height: 100vh; /* memastikan tinggi minimal 100vh */
+    background: url('BKG.jpg') no-repeat center center;
+    background-size: cover; /* menyesuaikan ukuran gambar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.home-content {
+    color: #fff;
+    z-index: 1; /* memastikan konten berada di atas background */
+}
+
+.home-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.home-content span {
+    color: #007bff;
+}
+
+.home-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 10%;
+    gap: 20px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-text span {
+    color: #007bff;
+}
+
+.about-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.services {
+    padding: 60px 10%;
+    background: #fff;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.service-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.service-item .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.cv {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.cv-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cv-content h2 span {
+    color: red;
+}
+
+.cv-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.skills {
+    padding: 60px 10%;
+    background: #f8f9fa;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.skill-bar {
+    margin-bottom: 20px;
+}
+
+.skill-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.progress {
+    background: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.bar {
+    background: #007bff;
+    height: 20px;
+}
+
+.contact {
+    padding: 60px 10%;
+    background: #fff;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 20px; /* Tambahkan jarak antara elemen form */
+}
+
+.contact label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact input,
+.contact textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact input[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px;
+}
+
+.contact input[type="submit"]:hover {
+    background: #0056b3;
+}
+
